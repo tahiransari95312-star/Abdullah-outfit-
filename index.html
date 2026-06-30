@@ -6,17 +6,17 @@
 <title>Abdullah Outfit - Style That Defines You</title>
 <style>
 :root{--gold:#FFD700;--black:#000;--white:#fff;--dark:#111}
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif;transition:all .3s}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;transition:all .3s}
 body{background:var(--black);color:var(--white)}
 body.light{background:#f5f5f5;color:#000}
 .gold{color:var(--gold)}
-.header{background:var(--dark);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:2px solid var(--gold)}
+.header{background:var(--dark);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:2px solid var(--gold);flex-wrap:wrap}
 body.light .header{background:#fff}
 .logo-area{display:flex;align-items:center;gap:10px}
-.ao-logo{background:var(--gold);color:var(--black);width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:18px}
+.ao-logo{background:var(--gold);color:var(--black);width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:18px;flex-shrink:0}
 .brand h1{font-size:18px;color:var(--gold);margin:0}
 .brand p{font-size:10px;margin:0;opacity:.8}
-.nav-icons{display:flex;gap:12px}
+.nav-icons{display:flex;gap:8px;flex-wrap:wrap}
 .icon-btn{background:#222;border:1px solid var(--gold);color:var(--gold);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;position:relative}
 body.light .icon-btn{background:#fff}
 .icon-btn:hover{background:var(--gold);color:var(--black)}
@@ -57,6 +57,7 @@ body.light .about,body.light .contact{background:#fff}
 .footer{background:var(--black);text-align:center;padding:20px;border-top:2px solid var(--gold);font-size:12px}
 body.light .footer{background:#f5f5f5}
 @media(min-width:768px){.products{grid-template-columns:repeat(4,1fr)}.hero h1{font-size:48px}}
+@media(max-width:480px){.brand h1{font-size:16px}.nav-icons{gap:5px}.icon-btn{width:35px;height:35px;font-size:14px}}
 </style>
 </head>
 <body>
@@ -75,6 +76,7 @@ body.light .footer{background:#f5f5f5}
 <button class="icon-btn" onclick="showWishlist()">❤️<span class="cart-count" id="wishCount">0</span></button>
 <button class="icon-btn" onclick="showCart()">🛒<span class="cart-count" id="cartCount">0</span></button>
 </div>
+</div>
 
 <div class="floating-btns">
 <button class="float-btn whatsapp-float" onclick="openWhatsApp()">📞</button>
@@ -89,7 +91,7 @@ body.light .footer{background:#f5f5f5}
 </div>
 
 <div class="search-bar">
-<input type="text" id="searchInput" placeholder="Search T-Shirts, Jeans, Hoodies..." onkeyup="searchProducts()">
+<input type="text" id="searchInput" placeholder="Search T-Shirts, Jeans, Hoodies..." data-hi="टी-शर्ट, जीन्स, हुडी खोजें..." onkeyup="searchProducts()">
 </div>
 
 <div class="categories">
@@ -204,10 +206,8 @@ function toggleLang(){
 lang=lang==='en'?'hi':'en';
 document.getElementById('langBtn').innerText=lang==='en'?'हि':'EN';
 document.querySelectorAll('[data-en]').forEach(el=>{
-el.innerText=el.getAttribute(`data-${lang}`);
-});
-document.querySelectorAll('[data-hi]').forEach(el=>{
 if(el.tagName==='INPUT')el.placeholder=el.getAttribute(`data-${lang}`);
+else el.innerText=el.getAttribute(`data-${lang}`);
 });
 displayProducts(products,'products');
 displayProducts(products.slice(0,4),'newProducts');

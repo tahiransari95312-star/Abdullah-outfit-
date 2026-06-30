@@ -1,116 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Outfit - Premium Men's Fashion</title>
-    <style>
-        * {margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif}
-        body {background:#000;color:#fff}
-        .gold {color:#FFD700}
-        .header {background:#111;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:2px solid #FFD700}
-        .logo {font-size:24px;font-weight:bold;color:#FFD700}
-        .nav-icons {display:flex;gap:20px;font-size:20px}
-        .nav-icons span {cursor:pointer;position:relative}
-        .cart-count {background:#FFD700;color:#000;border-radius:50%;padding:2px 6px;font-size:12px;position:absolute;top:-8px;right:-8px}
-        .hero {background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200');background-size:cover;padding:80px 20px;text-align:center}
-        .hero h1 {font-size:36px;color:#FFD700;margin-bottom:10px}
-        .hero p {font-size:18px;margin-bottom:20px}
-        .btn {background:#FFD700;color:#000;padding:12px 30px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;font-size:16px}
-        .search-bar {padding:20px;text-align:center;background:#111}
-        .search-bar input {width:90%;max-width:500px;padding:12px;border:2px solid #FFD700;border-radius:25px;background:#000;color:#fff;font-size:16px}
-        .categories {display:flex;overflow-x:auto;padding:20px;gap:10px;background:#111}
-        .cat-btn {background:#222;color:#FFD700;border:1px solid #FFD700;padding:10px 20px;border-radius:20px;white-space:nowrap;cursor:pointer}
-        .cat-btn.active {background:#FFD700;color:#000}
-        .section-title {text-align:center;padding:30px 20px 10px;font-size:28px;color:#FFD700}
-        .products {display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:15px;padding:20px}
-        .product {background:#111;border:1px solid #333;border-radius:10px;overflow:hidden;transition:.3s}
-        .product:hover {border-color:#FFD700;transform:translateY(-5px)}
-        .product img {width:100%;height:180px;object-fit:cover}
-        .product-info {padding:12px}
-        .product h3 {font-size:14px;margin-bottom:5px;height:35px}
-        .price {color:#FFD700;font-size:18px;font-weight:bold;margin:8px 0}
-        .product-btns {display:flex;gap:5px}
-        .add-cart {flex:1;background:#FFD700;color:#000;border:none;padding:8px;border-radius:5px;font-size:12px;cursor:pointer;font-weight:bold}
-        .wishlist {background:#222;border:1px solid #FFD700;color:#FFD700;padding:8px 12px;border-radius:5px;cursor:pointer}
-        .whatsapp {background:#25D366;color:#fff;border:none;padding:8px;border-radius:5px;font-size:12px;cursor:pointer;width:100%;margin-top:5px}
-        .about,.contact {padding:40px 20px;background:#111;margin:20px 0;text-align:center}
-        .footer {background:#000;text-align:center;padding:20px;border-top:2px solid #FFD700}
-        @media(min-width:768px){.products{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah Outfit - Premium Men's Fashion</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif}
+body{background:#000;color:#fff}
+.gold{color:#FFD700}
+.header{background:#111;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-size:24px;font-weight:bold;color:#FFD700}
+.nav-icons{display:flex;gap:20px;font-size:20px}
+.nav-icons span{cursor:pointer;position:relative}
+.cart-count{background:#FFD700;color:#000;border-radius:50%;padding:2px 6px;font-size:12px;position:absolute;top:-8px;right:-10px}
+.hero{background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200');background-size:cover;background-position:center;padding:100px 20px;text-align:center}
+.hero h1{font-size:36px;color:#FFD700;margin-bottom:10px}
+.hero p{font-size:18px;margin-bottom:20px}
+.btn{background:#FFD700;color:#000;padding:12px 30px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;font-size:16px}
+.search-bar{padding:20px;text-align:center;background:#111}
+.search-bar input{width:90%;max-width:500px;padding:12px;border:2px solid #FFD700;border-radius:25px;background:#000;color:#fff;font-size:16px}
+.categories{display:flex;overflow-x:auto;padding:20px;gap:10px;background:#111}
+.cat-btn{background:#222;color:#FFD700;border:1px solid #FFD700;padding:10px 20px;border-radius:20px;white-space:nowrap;cursor:pointer}
+.cat-btn.active{background:#FFD700;color:#000}
+.section-title{text-align:center;padding:30px 20px 10px;font-size:28px;color:#FFD700}
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:15px;padding:20px}
+.product{background:#111;border:1px solid #333;border-radius:10px;overflow:hidden;transition:.3s}
+.product:hover{border-color:#FFD700;transform:translateY(-5px)}
+.product img{width:100%;height:180px;object-fit:cover}
+.product-info{padding:12px}
+.product h3{font-size:14px;margin-bottom:5px;height:35px}
+.price{color:#FFD700;font-size:18px;font-weight:bold;margin:8px 0}
+.product-btns{display:flex;gap:5px}
+.add-cart{flex:1;background:#FFD700;color:#000;border:none;padding:8px;border-radius:5px;font-size:12px;cursor:pointer;font-weight:bold}
+.wishlist{background:#222;border:1px solid #FFD700;color:#FFD700;padding:8px 12px;border-radius:5px;cursor:pointer}
+.whatsapp{background:#25D366;color:#fff;border:none;padding:8px;border-radius:5px;font-size:12px;cursor:pointer;width:100%;margin-top:5px}
+.about,.contact{padding:40px 20px;background:#111;margin:20px 0;text-align:center}
+.footer{background:#000;text-align:center;padding:20px;border-top:2px solid #FFD700}
+@media(min-width:768px){.products{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+</style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">Abdullah Outfit</div>
-        <div class="nav-icons">
-            <span onclick="toggleWishlist()">❤️<span class="cart-count" id="wishCount">0</span></span>
-            <span onclick="toggleCart()">🛒<span class="cart-count" id="cartCount">0</span></span>
-        </div>
-    </div>
+<div class="header">
+<div class="logo">Abdullah Outfit</div>
+<div class="nav-icons">
+<span onclick="toggleWishlist()">❤️<span class="cart-count" id="wishCount">0</span></span>
+<span onclick="toggleCart()">🛒<span class="cart-count" id="cartCount">0</span></span>
+</div>
 
-    <div class="hero">
-        <h1>Premium Men's Fashion</h1>
-        <p class="gold">Black & Gold Collection 2026</p>
-        <button class="btn" onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
-    </div>
+<div class="hero">
+<h1>Premium Men's Fashion</h1>
+<p class="gold">Black & Gold Collection 2026</p>
+<button class="btn" onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
+</div>
 
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search T-Shirts, Jeans, Hoodies..." onkeyup="searchProducts()">
-    </div>
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="Search T-Shirts, Jeans, Hoodies..." onkeyup="searchProducts()">
+</div>
 
-    <div class="categories">
-        <button class="cat-btn active" onclick="filterCat('all')">All</button>
-        <button class="cat-btn" onclick="filterCat('tshirt')">T-Shirts</button>
-        <button class="cat-btn" onclick="filterCat('shirt')">Shirts</button>
-        <button class="cat-btn" onclick="filterCat('jeans')">Jeans</button>
-        <button class="cat-btn" onclick="filterCat('hoodie')">Hoodies</button>
-        <button class="cat-btn" onclick="filterCat('shoes')">Shoes</button>
-    </div>
+<div class="categories">
+<button class="cat-btn active" onclick="filterCat('all')">All</button>
+<button class="cat-btn" onclick="filterCat('tshirt')">T-Shirts</button>
+<button class="cat-btn" onclick="filterCat('shirt')">Shirts</button>
+<button class="cat-btn" onclick="filterCat('jeans')">Jeans</button>
+<button class="cat-btn" onclick="filterCat('hoodie')">Hoodies</button>
+</div>
 
-    <h2 class="section-title">Best Sellers</h2>
-    <div class="products" id="products"></div>
+<h2 class="section-title">Best Sellers</h2>
+<div class="products" id="products"></div>
 
-    <h2 class="section-title">New Arrivals</h2>
-    <div class="products" id="newProducts"></div>
+<h2 class="section-title">New Arrivals</h2>
+<div class="products" id="newProducts"></div>
 
-    <div class="about" id="about">
-        <h2 class="gold">About Us</h2>
-        <p style="margin-top:15px;line-height:1.6">Abdullah Outfit - Latur ka sabse premium men's fashion brand. Hum best quality T-Shirts, Shirts, Jeans, Hoodies aur Shoes dete hain. Black & Gold theme ke saath style aur comfort ka perfect combination.</p>
-    </div>
+<div class="about" id="about">
+<h2 class="gold">About Us</h2>
+<p style="margin-top:15px;line-height:1.6">Abdullah Outfit - Bhiwandi ka sabse premium men's fashion brand. Hum best quality clothes dete hain wholesale aur retail dono me.</p>
+</div>
 
-    <div class="contact" id="contact">
-        <h2 class="gold">Contact Us</h2>
-        <p style="margin-top:15px">📱 WhatsApp: +91 88586 88839</p>
-        <p>📧 Email: abdullahoutfit@gmail.com</p>
-        <p>📍 Latur, Maharashtra</p>
-    </div>
+<div class="contact" id="contact">
+<h2 class="gold">Contact Us</h2>
+<p style="margin-top:15px">📱 WhatsApp: +91 88586 88820</p>
+<p>📧 Email: abdullahoutfit@gmail.com</p>
+<p>📍 Shanti Nagar, KGN Police Chauki, Bhiwandi, Maharashtra</p>
+</div>
 
-    <div class="footer">
-        <p>© 2026 Abdullah Outfit. All Rights Reserved.</p>
-    </div>
+<div class="footer">
+<p>© 2026 Abdullah Outfit. All Rights Reserved.</p>
+</div>
 
 <script>
 const products = [
-{id:1,name:"Black Premium T-Shirt",price:599,cat:"tshirt",img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400"},
-{id:2,name:"Gold Print T-Shirt",price:699,cat:"tshirt",img:"https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400"},
-{id:3,name:"Casual Cotton T-Shirt",price:499,cat:"tshirt",img:"https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400"},
-{id:4,name:"Graphic T-Shirt",price:649,cat:"tshirt",img:"https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400"},
-{id:5,name:"Formal White Shirt",price:899,cat:"shirt",img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400"},
-{id:6,name:"Black Casual Shirt",price:799,cat:"shirt",img:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=400"},
-{id:7,name:"Denim Blue Shirt",price:849,cat:"shirt",img:"https://images.unsplash.com/photo-1626497764746-6dc36546b388?w=400"},
-{id:8,name:"Checked Shirt",price:749,cat:"shirt",img:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400"},
-{id:9,name:"Slim Fit Jeans Blue",price:1299,cat:"jeans",img:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=400"},
-{id:10,name:"Black Denim Jeans",price:1399,cat:"jeans",img:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400"},
-{id:11,name:"Ripped Jeans",price:1499,cat:"jeans",img:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400"},
-{id:12,name:"Cargo Jeans",price:1599,cat:"jeans",img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400"},
-{id:13,name:"Black Hoodie",price:1199,cat:"hoodie",img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400"},
-{id:14,name:"Gold Logo Hoodie",price:1299,cat:"hoodie",img:"https://images.unsplash.com/photo-1578768079052-aa76e2f5e48a?w=400"},
-{id:15,name:"Zipper Hoodie",price:1399,cat:"hoodie",img:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400"},
-{id:16,name:"Oversized Hoodie",price:1249,cat:"hoodie",img:"https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=400"},
-{id:17,name:"White Sneakers",price:1999,cat:"shoes",img:"https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400"},
-{id:18,name:"Black Formal Shoes",price:2499,cat:"shoes",img:"https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400"},
-{id:19,name:"Sports Shoes",price:1799,cat:"shoes",img:"https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400"},
-{id:20,name:"Casual Loafers",price:1599,cat:"shoes",img:"https://images.unsplash.com/photo-1560343090-f0409e92791a?w=400"}
+{id:1,name:"Pink Blue Imported Shirt",price:699,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0019.jpg"},
+{id:2,name:"Premium T-Shirt",price:599,cat:"tshirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0021.jpg"},
+{id:3,name:"Designer Hoodie",price:949,cat:"hoodie",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0024.jpg"},
+{id:4,name:"Casual Shirt",price:849,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0025.jpg"},
+{id:5,name:"Formal Shirt",price:899,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0026.jpg"},
+{id:6,name:"Printed T-Shirt",price:849,cat:"tshirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0028.jpg"},
+{id:7,name:"Winter Hoodie",price:949,cat:"hoodie",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0029.jpg"},
+{id:8,name:"Boot Cut LV-504 TR Jeans",price:1199,cat:"jeans",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0020.jpg"}
 ];
 
 let cart=[],wishlist=[];
@@ -123,44 +109,60 @@ document.getElementById(container).innerHTML=list.map(p=>`
 <h3>${p.name}</h3>
 <div class="price">₹${p.price}</div>
 <div class="product-btns">
-<button class="add-cart" onclick="addCart(${p.id})">Add to Cart</button>
-<button class="wishlist" onclick="addWish(${p.id})">❤️</button>
+<button class="add-cart" onclick="addToCart(${p.id})">Add to Cart</button>
+<button class="wishlist" onclick="addToWishlist(${p.id})">❤️</button>
 </div>
-<button class="whatsapp" onclick="orderWhatsApp('${p.name}',${p.price})">WhatsApp Order</button>
-</div></div>`).join('')
+<button class="whatsapp" onclick="buyNow(${p.id})">Buy on WhatsApp</button>
+</div>
+`).join('');
 }
 
-displayProducts(products.slice(0,10),'products');
-displayProducts(products.slice(10,20),'newProducts');
-
-function addCart(id){
-cart.push(id);
-document.getElementById('cartCount').textContent=cart.length;
-alert('Added to Cart!')
-}
-function addWish(id){
-wishlist.push(id);
-document.getElementById('wishCount').textContent=wishlist.length;
-alert('Added to Wishlist!')
-}
-function toggleCart(){alert('Cart Items: '+cart.length)}
-function toggleWishlist(){alert('Wishlist Items: '+wishlist.length)}
-function orderWhatsApp(name,price){
-window.open(`https://wa.me/918858688839?text=Hi, I want to order ${name} for ₹${price} from Abdullah Outfit`,'_blank')
-}
 function filterCat(cat){
 document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
 event.target.classList.add('active');
-document.querySelectorAll('.product').forEach(p=>{
-p.style.display=(cat==='all'||p.dataset.cat===cat)?'block':'none'
-})
+let filtered = cat==='all' ? products : products.filter(p=>p.cat===cat);
+displayProducts(filtered,'products');
 }
+
 function searchProducts(){
-let val=document.getElementById('searchInput').value.toLowerCase();
-document.querySelectorAll('.product').forEach(p=>{
-p.style.display=p.dataset.name.includes(val)?'block':'none'
-})
+let q = document.getElementById('searchInput').value.toLowerCase();
+let filtered = products.filter(p=>p.name.toLowerCase().includes(q));
+displayProducts(filtered,'products');
 }
+
+function addToCart(id){
+let item = products.find(p=>p.id===id);
+cart.push(item);
+document.getElementById('cartCount').innerText = cart.length;
+alert('Added to Cart!');
+}
+
+function addToWishlist(id){
+let item = products.find(p=>p.id===id);
+wishlist.push(item);
+document.getElementById('wishCount').innerText = wishlist.length;
+alert('Added to Wishlist!');
+}
+
+function buyNow(id){
+let item = products.find(p=>p.id===id);
+let msg = `Hi, I want to buy ${item.name} for ₹${item.price}`;
+window.open(`https://wa.me/918858688820?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+function toggleCart(){
+if(cart.length===0){alert('Cart is empty');return;}
+let total = cart.reduce((sum,item)=>sum+item.price,0);
+let msg = `My Cart:\n${cart.map(i=>`${i.name} - ₹${i.price}`).join('\n')}\nTotal: ₹${total}`;
+window.open(`https://wa.me/918858688820?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+function toggleWishlist(){
+alert(`Wishlist: ${wishlist.length} items`);
+}
+
+displayProducts(products,'products');
+displayProducts(products.slice(0,4),'newProducts');
 </script>
 </body>
 </html>

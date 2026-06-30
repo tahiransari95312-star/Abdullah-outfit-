@@ -3,55 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdullah Outfit - Premium Men's Fashion</title>
+<title>Abdullah Outfit - Style That Defines You</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif}
-body{background:#000;color:#fff}
-.gold{color:#FFD700}
-.header{background:#111;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.logo{font-size:24px;font-weight:bold;color:#FFD700}
-.nav-icons{display:flex;gap:20px;font-size:20px}
-.nav-icons span{cursor:pointer;position:relative}
-.cart-count{background:#FFD700;color:#000;border-radius:50%;padding:2px 6px;font-size:12px;position:absolute;top:-8px;right:-10px}
-.hero{background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200');background-size:cover;background-position:center;padding:100px 20px;text-align:center}
-.hero h1{font-size:36px;color:#FFD700;margin-bottom:10px}
-.hero p{font-size:18px;margin-bottom:20px}
-.btn{background:#FFD700;color:#000;padding:12px 30px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;font-size:16px}
-.search-bar{padding:20px;text-align:center;background:#111}
-.search-bar input{width:90%;max-width:500px;padding:12px;border:2px solid #FFD700;border-radius:25px;background:#000;color:#fff;font-size:16px}
-.categories{display:flex;overflow-x:auto;padding:20px;gap:10px;background:#111}
-.cat-btn{background:#222;color:#FFD700;border:1px solid #FFD700;padding:10px 20px;border-radius:20px;white-space:nowrap;cursor:pointer}
-.cat-btn.active{background:#FFD700;color:#000}
-.section-title{text-align:center;padding:30px 20px 10px;font-size:28px;color:#FFD700}
-.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:15px;padding:20px}
-.product{background:#111;border:1px solid #333;border-radius:10px;overflow:hidden;transition:.3s}
-.product:hover{border-color:#FFD700;transform:translateY(-5px)}
-.product img{width:100%;height:180px;object-fit:cover}
-.product-info{padding:12px}
-.product h3{font-size:14px;margin-bottom:5px;height:35px}
-.price{color:#FFD700;font-size:18px;font-weight:bold;margin:8px 0}
-.product-btns{display:flex;gap:5px}
-.add-cart{flex:1;background:#FFD700;color:#000;border:none;padding:8px;border-radius:5px;font-size:12px;cursor:pointer;font-weight:bold}
-.wishlist{background:#222;border:1px solid #FFD700;color:#FFD700;padding:8px 12px;border-radius:5px;cursor:pointer}
-.whatsapp{background:#25D366;color:#fff;border:none;padding:8px;border-radius:5px;font-size:12px;cursor:pointer;width:100%;margin-top:5px}
-.about,.contact{padding:40px 20px;background:#111;margin:20px 0;text-align:center}
-.footer{background:#000;text-align:center;padding:20px;border-top:2px solid #FFD700}
-@media(min-width:768px){.products{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+:root{--gold:#FFD700;--black:#000;--white:#fff;--dark:#111}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif;transition:all .3s}
+body{background:var(--black);color:var(--white)}
+body.light{background:#f5f5f5;color:#000}
+.gold{color:var(--gold)}
+.header{background:var(--dark);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:2px solid var(--gold)}
+body.light .header{background:#fff}
+.logo-area{display:flex;align-items:center;gap:10px}
+.ao-logo{background:var(--gold);color:var(--black);width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:18px}
+.brand h1{font-size:18px;color:var(--gold);margin:0}
+.brand p{font-size:10px;margin:0;opacity:.8}
+.nav-icons{display:flex;gap:12px}
+.icon-btn{background:#222;border:1px solid var(--gold);color:var(--gold);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;position:relative}
+body.light .icon-btn{background:#fff}
+.icon-btn:hover{background:var(--gold);color:var(--black)}
+.cart-count{background:var(--gold);color:var(--black);border-radius:50%;padding:2px 5px;font-size:10px;position:absolute;top:-5px;right:-5px;font-weight:bold}
+.floating-btns{position:fixed;right:15px;bottom:80px;z-index:999;display:flex;flex-direction:column;gap:10px}
+.float-btn{width:55px;height:55px;border-radius:50%;border:none;cursor:pointer;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.whatsapp-float{background:#25D366;color:#fff}
+.chat-float{background:var(--gold);color:var(--black)}
+.hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1617137968427-85924c800a22?w=1200');background-size:cover;background-position:center;padding:60px 20px;text-align:center}
+.hero h2{font-size:16px;color:var(--gold);letter-spacing:3px;margin-bottom:10px}
+.hero h1{font-size:32px;color:var(--white);margin-bottom:15px}
+.hero p{font-size:14px;margin-bottom:20px;opacity:.9}
+.btn{background:var(--gold);color:var(--black);padding:12px 35px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;font-size:16px}
+.search-bar{padding:20px 15px;text-align:center;background:var(--dark)}
+body.light .search-bar{background:#fff}
+.search-bar input{width:100%;max-width:500px;padding:12px 20px;border:2px solid var(--gold);border-radius:25px;background:var(--black);color:var(--white);font-size:16px}
+body.light .search-bar input{background:#f5f5f5;color:#000}
+.categories{display:flex;overflow-x:auto;padding:15px;gap:8px;background:var(--dark)}
+body.light .categories{background:#fff}
+.cat-btn{background:#222;color:var(--gold);border:1px solid var(--gold);padding:8px 18px;border-radius:20px;white-space:nowrap;cursor:pointer;font-size:14px}
+body.light .cat-btn{background:#f5f5f5}
+.cat-btn.active{background:var(--gold);color:var(--black)}
+.section-title{text-align:center;padding:25px 15px 10px;font-size:24px;color:var(--gold)}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:15px}
+.product{background:var(--dark);border:1px solid #333;border-radius:10px;overflow:hidden}
+body.light .product{background:#fff;border-color:#ddd}
+.product img{width:100%;height:160px;object-fit:cover}
+.product-info{padding:10px}
+.product h3{font-size:13px;margin-bottom:5px;height:32px;line-height:1.2}
+.price{color:var(--gold);font-size:16px;font-weight:bold;margin:6px 0}
+.product-btns{display:flex;gap:5px;margin-top:8px}
+.add-cart{flex:1;background:var(--gold);color:var(--black);border:none;padding:8px;border-radius:5px;font-size:11px;cursor:pointer;font-weight:bold}
+.wishlist{background:#222;border:1px solid var(--gold);color:var(--gold);padding:8px 10px;border-radius:5px;cursor:pointer}
+body.light .wishlist{background:#f5f5f5}
+.whatsapp-btn{background:#25D366;color:#fff;border:none;padding:8px;border-radius:5px;font-size:11px;cursor:pointer;width:100%;margin-top:5px}
+.about,.contact{padding:35px 20px;background:var(--dark);margin:20px 0;text-align:center}
+body.light .about,body.light .contact{background:#fff}
+.footer{background:var(--black);text-align:center;padding:20px;border-top:2px solid var(--gold);font-size:12px}
+body.light .footer{background:#f5f5f5}
+@media(min-width:768px){.products{grid-template-columns:repeat(4,1fr)}.hero h1{font-size:48px}}
 </style>
 </head>
 <body>
 <div class="header">
-<div class="logo">Abdullah Outfit</div>
+<div class="logo-area">
+<div class="ao-logo">AO</div>
+<div class="brand">
+<h1>Abdulla Outfit</h1>
+<p data-en="Style That Defines You" data-hi="ऐसी स्टाइल जो आपको परिभाषित करे">Style That Defines You</p>
+</div>
+</div>
 <div class="nav-icons">
-<span onclick="toggleWishlist()">❤️<span class="cart-count" id="wishCount">0</span></span>
-<span onclick="toggleCart()">🛒<span class="cart-count" id="cartCount">0</span></span>
+<button class="icon-btn" onclick="toggleLang()" id="langBtn">हि</button>
+<button class="icon-btn" onclick="toggleTheme()">☀️</button>
+<button class="icon-btn">👤</button>
+<button class="icon-btn" onclick="showWishlist()">❤️<span class="cart-count" id="wishCount">0</span></button>
+<button class="icon-btn" onclick="showCart()">🛒<span class="cart-count" id="cartCount">0</span></button>
 </div>
+
+<div class="floating-btns">
+<button class="float-btn whatsapp-float" onclick="openWhatsApp()">📞</button>
+<button class="float-btn chat-float" onclick="openChat()">💬</button>
 </div>
-  
+
 <div class="hero">
-<h1>Premium Men's Fashion</h1>
-<p class="gold">Black & Gold Collection 2026</p>
-<button class="btn" onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
+<h2 data-en="LUXURY MENSWEAR" data-hi="लक्ज़री मेन्सवियर">LUXURY MENSWEAR</h2>
+<h1>Abdulla Outfit</h1>
+<p data-en="Premium tailoring, modern silhouettes, and elevated essentials crafted for men who lead" data-hi="प्रीमियम टेलरिंग, आधुनिक स्टाइल और बेहतरीन कपड़े">Premium tailoring, modern silhouettes, and elevated essentials crafted for men who lead</p>
+<button class="btn" onclick="document.getElementById('products').scrollIntoView()" data-en="Shop Now" data-hi="अभी खरीदें">Shop Now</button>
 </div>
 
 <div class="search-bar">
@@ -59,29 +93,29 @@ body{background:#000;color:#fff}
 </div>
 
 <div class="categories">
-<button class="cat-btn active" onclick="filterCat('all')">All</button>
-<button class="cat-btn" onclick="filterCat('tshirt')">T-Shirts</button>
-<button class="cat-btn" onclick="filterCat('shirt')">Shirts</button>
-<button class="cat-btn" onclick="filterCat('jeans')">Jeans</button>
-<button class="cat-btn" onclick="filterCat('hoodie')">Hoodies</button>
+<button class="cat-btn active" onclick="filterCat('all')" data-en="All" data-hi="सभी">All</button>
+<button class="cat-btn" onclick="filterCat('tshirt')" data-en="T-Shirts" data-hi="टी-शर्ट">T-Shirts</button>
+<button class="cat-btn" onclick="filterCat('shirt')" data-en="Shirts" data-hi="शर्ट">Shirts</button>
+<button class="cat-btn" onclick="filterCat('jeans')" data-en="Jeans" data-hi="जीन्स">Jeans</button>
+<button class="cat-btn" onclick="filterCat('hoodie')" data-en="Hoodies" data-hi="हुडी">Hoodies</button>
 </div>
 
-<h2 class="section-title">Best Sellers</h2>
+<h2 class="section-title" data-en="Best Sellers" data-hi="बेस्ट सेलर">Best Sellers</h2>
 <div class="products" id="products"></div>
 
-<h2 class="section-title">New Arrivals</h2>
+<h2 class="section-title" data-en="New Arrivals" data-hi="नए प्रोडक्ट">New Arrivals</h2>
 <div class="products" id="newProducts"></div>
 
-<div class="about" id="about">
-<h2 class="gold">About Us</h2>
-<p style="margin-top:15px;line-height:1.6">Abdullah Outfit - Bhiwandi ka sabse premium men's fashion brand. Hum best quality clothes dete hain wholesale aur retail dono me.</p>
+<div class="about">
+<h2 class="gold" data-en="About Us" data-hi="हमारे बारे में">About Us</h2>
+<p style="margin-top:15px;line-height:1.6" data-en="Abdullah Outfit - Bhiwandi's most premium men's fashion brand. We provide best quality clothes in wholesale and retail." data-hi="अब्दुल्ला आउटफिट - भिवंडी का सबसे प्रीमियम मेन्स फैशन ब्रांड। हम होलसेल और रिटेल में बेस्ट क्वालिटी कपड़े देते हैं।">Abdullah Outfit - Bhiwandi's most premium men's fashion brand. We provide best quality clothes in wholesale and retail.</p>
 </div>
 
-<div class="contact" id="contact">
-<h2 class="gold">Contact Us</h2>
+<div class="contact">
+<h2 class="gold" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</h2>
 <p style="margin-top:15px">📱 WhatsApp: +91 88586 88820</p>
 <p>📧 Email: abdullahoutfit@gmail.com</p>
-<p>📍 Shanti Nagar, KGN Police Chauki, Bhiwandi, Maharashtra</p>
+<p data-en="📍 Shanti Nagar, KGN Police Chauki, Bhiwandi, Maharashtra" data-hi="📍 शांति नगर, KGN पुलिस चौकी, भिवंडी, महाराष्ट्र">📍 Shanti Nagar, KGN Police Chauki, Bhiwandi, Maharashtra</p>
 </div>
 
 <div class="footer">
@@ -89,77 +123,102 @@ body{background:#000;color:#fff}
 </div>
 
 <script>
-const products = [
-{id:1,name:"Pink Blue Imported Shirt",price:699,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0019.jpg"},
-{id:2,name:"Premium T-Shirt",price:599,cat:"tshirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0021.jpg"},
-{id:3,name:"Designer Hoodie",price:949,cat:"hoodie",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0024.jpg"},
-{id:4,name:"Casual Shirt",price:849,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0025.jpg"},
-{id:5,name:"Formal Shirt",price:899,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0026.jpg"},
-{id:6,name:"Printed T-Shirt",price:849,cat:"tshirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0028.jpg"},
-{id:7,name:"Winter Hoodie",price:949,cat:"hoodie",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0029.jpg"},
-{id:8,name:"Boot Cut LV-504 TR Jeans",price:1199,cat:"jeans",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0020.jpg"}
+let lang='en';let theme='dark';
+const products=[
+{id:1,name:"Pink Blue Imported Shirt",nameHi:"पिंक ब्लू इम्पोर्टेड शर्ट",price:699,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0019.jpg"},
+{id:2,name:"Premium T-Shirt",nameHi:"प्रीमियम टी-शर्ट",price:599,cat:"tshirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0021.jpg"},
+{id:3,name:"Designer Hoodie",nameHi:"डिज़ाइनर हुडी",price:949,cat:"hoodie",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0024.jpg"},
+{id:4,name:"Casual Shirt",nameHi:"कैजुअल शर्ट",price:849,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0025.jpg"},
+{id:5,name:"Formal Shirt",nameHi:"फॉर्मल शर्ट",price:899,cat:"shirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0026.jpg"},
+{id:6,name:"Printed T-Shirt",nameHi:"प्रिंटेड टी-शर्ट",price:849,cat:"tshirt",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0028.jpg"},
+{id:7,name:"Winter Hoodie",nameHi:"विंटर हुडी",price:949,cat:"hoodie",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0029.jpg"},
+{id:8,name:"Boot Cut Jeans",nameHi:"बूट कट जीन्स",price:1199,cat:"jeans",img:"https://github.com/tahiransari95312-star/Abdullah-outfit-/raw/refs/heads/main/IMG-20260630-WA0020.jpg"}
 ];
-
 let cart=[],wishlist=[];
 
 function displayProducts(list,container){
 document.getElementById(container).innerHTML=list.map(p=>`
-<div class="product" data-cat="${p.cat}" data-name="${p.name.toLowerCase()}">
+<div class="product">
 <img src="${p.img}" alt="${p.name}">
 <div class="product-info">
-<h3>${p.name}</h3>
+<h3>${lang==='hi'?p.nameHi:p.name}</h3>
 <div class="price">₹${p.price}</div>
 <div class="product-btns">
-<button class="add-cart" onclick="addToCart(${p.id})">Add to Cart</button>
+<button class="add-cart" onclick="addToCart(${p.id})" data-en="Add to Cart" data-hi="कार्ट में डालें">${lang==='hi'?'कार्ट में डालें':'Add to Cart'}</button>
 <button class="wishlist" onclick="addToWishlist(${p.id})">❤️</button>
 </div>
-<button class="whatsapp" onclick="buyNow(${p.id})">Buy on WhatsApp</button>
-</div>
-`).join('');
+<button class="whatsapp-btn" onclick="buyNow(${p.id})" data-en="Buy on WhatsApp" data-hi="WhatsApp पर खरीदें">${lang==='hi'?'WhatsApp पर खरीदें':'Buy on WhatsApp'}</button>
+</div></div>`).join('');
 }
 
 function filterCat(cat){
 document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
 event.target.classList.add('active');
-let filtered = cat==='all' ? products : products.filter(p=>p.cat===cat);
+let filtered=cat==='all'?products:products.filter(p=>p.cat===cat);
 displayProducts(filtered,'products');
 }
 
 function searchProducts(){
-let q = document.getElementById('searchInput').value.toLowerCase();
-let filtered = products.filter(p=>p.name.toLowerCase().includes(q));
+let q=document.getElementById('searchInput').value.toLowerCase();
+let filtered=products.filter(p=>p.name.toLowerCase().includes(q)||p.nameHi.includes(q));
 displayProducts(filtered,'products');
 }
 
 function addToCart(id){
-let item = products.find(p=>p.id===id);
+let item=products.find(p=>p.id===id);
 cart.push(item);
-document.getElementById('cartCount').innerText = cart.length;
-alert('Added to Cart!');
+document.getElementById('cartCount').innerText=cart.length;
+alert(lang==='hi'?'कार्ट में जोड़ दिया!':'Added to Cart!');
 }
 
 function addToWishlist(id){
-let item = products.find(p=>p.id===id);
+let item=products.find(p=>p.id===id);
 wishlist.push(item);
-document.getElementById('wishCount').innerText = wishlist.length;
-alert('Added to Wishlist!');
+document.getElementById('wishCount').innerText=wishlist.length;
+alert(lang==='hi'?'विशलिस्ट में जोड़ दिया!':'Added to Wishlist!');
 }
 
 function buyNow(id){
-let item = products.find(p=>p.id===id);
-let msg = `Hi, I want to buy ${item.name} for ₹${item.price}`;
+let item=products.find(p=>p.id===id);
+let msg=`Hi, I want to buy ${item.name} for ₹${item.price}`;
 window.open(`https://wa.me/918858688820?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
-function toggleCart(){
-if(cart.length===0){alert('Cart is empty');return;}
-let total = cart.reduce((sum,item)=>sum+item.price,0);
-let msg = `My Cart:\n${cart.map(i=>`${i.name} - ₹${i.price}`).join('\n')}\nTotal: ₹${total}`;
+function showCart(){
+if(cart.length===0){alert(lang==='hi'?'कार्ट खाली है':'Cart is empty');return;}
+let total=cart.reduce((sum,item)=>sum+item.price,0);
+let msg=`My Cart:\n${cart.map(i=>`${i.name} - ₹${i.price}`).join('\n')}\nTotal: ₹${total}`;
 window.open(`https://wa.me/918858688820?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
-function toggleWishlist(){
-alert(`Wishlist: ${wishlist.length} items`);
+function showWishlist(){
+alert(`${lang==='hi'?'विशलिस्ट':'Wishlist'}: ${wishlist.length} ${lang==='hi'?'आइटम':'items'}`);
+}
+
+function toggleTheme(){
+theme=theme==='dark'?'light':'dark';
+document.body.classList.toggle('light');
+}
+
+function toggleLang(){
+lang=lang==='en'?'hi':'en';
+document.getElementById('langBtn').innerText=lang==='en'?'हि':'EN';
+document.querySelectorAll('[data-en]').forEach(el=>{
+el.innerText=el.getAttribute(`data-${lang}`);
+});
+document.querySelectorAll('[data-hi]').forEach(el=>{
+if(el.tagName==='INPUT')el.placeholder=el.getAttribute(`data-${lang}`);
+});
+displayProducts(products,'products');
+displayProducts(products.slice(0,4),'newProducts');
+}
+
+function openWhatsApp(){
+window.open('https://wa.me/918858688820','_blank');
+}
+
+function openChat(){
+alert(lang==='hi'?'जल्द आ रहा है!':'Coming soon!');
 }
 
 displayProducts(products,'products');
